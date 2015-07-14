@@ -1,12 +1,12 @@
 // API code
 function makeShortenUrlRequest(){
-    var request = gapi.client.urlshortener.insert({
+    var request = gapi.client.urlshortener.url.insert({
         "resource": {
             "longUrl": $('.shortenUrl > p > input')[0].value
         }
     });
     request.then(function(response){
-        $('.shortenUrl > p')[1].innerHTML += response.id;
+        $('.shortenUrl > p')[1].innerHTML += response.result.id;
     },function(response){
         console.log("Error occured!");
     });
