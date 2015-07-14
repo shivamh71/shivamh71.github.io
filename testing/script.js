@@ -1,22 +1,21 @@
-// Angular JS code
-var app = angular.module("urlShortener",[]);
-app.controller("appController",function($scope,$http){
-    $scope.shortUrl = "";
-    $scope.longUrl = "";
-    $scope.getOriginalUrl = function(){
-        console.log("here");
-        var request = gapi.client.urlshortener.url.get({
-            "shortUrl" : $scope.shortUrl
-        });
-        request.then(function(response){
-            $scope.longUrl = response.result.longUrl;
-        },function(response){
-            console.log("Error occured!");
-        });
-    }
-});
+// API code
 
-function init(){
+function makeShortenUrlRequest(){
+
+}
+
+function makeRetrieveOriginalUrlRequest(){
+    var request = gapi.client.urlshortener.url.get({
+        "shortUrl" : $('.retrieveUrl > p > input')[0].textContent
+    });
+    request.then(function(response){
+        $('.retrieveUrl > p')[1].innerHTML += response.result.longUrl;
+    },function(response){
+        console.log("Error occured!");
+    });
+}
+
+function retrieveOriginalUrl(){
     gapi.client.setApiKey("AIzaSyDGosRUWhEismSud3vuCx-rT1DcRD7AmTQ");
-    gapi.client.load("urlshortener","v1").then(function(){});
+    gapi.client.load("urlshortener","v1").then(makeRetrieveOriginalUrlRequest);
 }
