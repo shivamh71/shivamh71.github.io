@@ -1,0 +1,39 @@
+.header {
+  font-family: Comic Sans MS;
+  font-size: 24px;
+  margin: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.searchDiv {
+  padding: 10px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+input.searchBar {
+  border: 2px solid #1fa67a;
+  font-size: 16px;
+  height: 35px;
+  text-align: center;
+  width: 280px;
+}
+ul.sitesList {
+  list-style: outside none none;
+  margin: 0 auto;
+  max-width: 500px;
+  padding-left: 0;
+  text-align: center;
+  text-decoration: none;
+}
+.sitesList li {
+  background-color: #1fa67a;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 17px;
+  height: 25px;
+  padding: 0;
+}
+.sitesList a {
+  color: white;
+  text-decoration: none;
+}
